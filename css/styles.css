@@ -105,6 +105,9 @@ header {
   margin-top: 0;
 }
 
+.preamble {
+  font-weight: 900;
+}
 /* Work Experience
 ------------------------------------*/
 .work-experience {
