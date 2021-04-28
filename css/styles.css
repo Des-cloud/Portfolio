@@ -55,6 +55,7 @@ h2 {
   margin: 0 auto;
   padding: 60px 0;
 }
+
 h3 {
   margin-bottom: 0;
 }
@@ -108,6 +109,37 @@ header {
 .preamble {
   font-weight: 900;
 }
+
+/******* Tutoring *************/
+.tutoring {
+  width: 95%;
+  margin: 0 auto 1%;
+}
+
+.tutoring-p {
+  width: 40%;
+  margin-left: 10%;
+  margin-bottom: 1%;
+}
+
+.tutoring-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.tutoring .btn {
+  color: #f7fff7;
+  background: #2f3061;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.tutoring .btn:hover {
+  background: rgba(47, 48, 97, 80%);
+}
+
 /* Work Experience
 ------------------------------------*/
 .work-experience {
@@ -134,10 +166,13 @@ header {
 /* Education
 ------------------------------------*/
 .education {
+  /* background-image: url(../images/joanna-kosinska-unsplash.jpg); */
   background-image: url(../images/joanna-kosinska-unsplash.jpg);
   background-size: cover;
   background-position: top right;
   padding-bottom: 100px;
+  /* color: white; */
+  font-weight: bold;
 }
 .education p {
   width: 60%;
@@ -145,7 +180,7 @@ header {
 
 .coursework {
   color: teal;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 /* Contact Info
@@ -175,6 +210,10 @@ footer {
     margin-right: 20px;
   }
 
+  .tutoring {
+    overflow: hidden;
+  }
+
   .job-item {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -197,5 +236,19 @@ footer {
   }
   .contact-list a {
     padding: 5px;
+  }
+
+  .tutoring {
+    width: 100%;
+    margin: 2% 0;
+  }
+
+  .tutoring-p {
+    width: 90%;
+    margin: 0 auto 2%;
+  }
+
+  .education {
+    background-image: url(../images/joanna-kosinska-unsplash.jpg);
   }
 }
