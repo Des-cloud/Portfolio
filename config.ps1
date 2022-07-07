@@ -63,12 +63,8 @@ New-NetIPAddress -IPAddress 192.168.0.1 -PrefixLength 24 -InterfaceIndex $Interf
 New-NetNat -Name "InternalNat" -InternalIPInterfaceAddressPrefix 192.168.0.0/24
 
 #Registry Checking and setting the values to 1
-$LongPathsEnabled = (Get-ItemProperty -path 'HKLM:/SYSTEM/ControlSet001/Control/FileSystem' -Name 'LongPathsEnabled').LongPathsEnabled
-if($LongPathsEnabled -ne 1){Set-ItemProperty -path 'HKLM:/SYSTEM/ControlSet001/Control/FileSystem' -Name 'LongPathsEnabled' -Value '1'}
-$LPGO = (Get-ItemProperty -path 'HKLM:/SYSTEM/ControlSet001/Control/FileSystem' -Name 'LPGO').LPGO
-if($LPGO -ne 1){Set-ItemProperty -path 'HKLM:/SYSTEM/ControlSet001/Control/FileSystem' -Name 'LPGO' -Value '1'}
+& "$PSScriptRoot\registry.ps1"
 
-#Add other admins
-Add-Content -Path $logfile -Value "Adding other admins./r/n/"
-New-LocalUser -Name "scxsign" -Description "Adding redmond/scxsign" -NoPassword
-Add-LocalGroupMember -Group "Administrators" -Member "scxsign"
+
+#Adding other admins to the VM
+& "$PSScriptRoot\admin.ps1"
